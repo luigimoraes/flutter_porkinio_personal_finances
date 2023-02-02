@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.porkinio_personal_expenses">
    <application
-        android:label="porkinio_personal_expenses"
+        android:label="Porkin.io"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity
