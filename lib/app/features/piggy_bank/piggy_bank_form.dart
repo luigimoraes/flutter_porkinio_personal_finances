@@ -37,7 +37,7 @@ class _PiggyBankFormState extends State<PiggyBankForm> {
     _titleController.text = widget.model?.title ?? '';
     _amountController.text = widget.model?.amount.toString() ?? '';
     _networkImageController.text = widget.model?.networkImage.toString() ??
-        'https://i.imgur.com/Ac6Vbgj.png';
+        'https://i.imgur.com/d9mLUE4.png';
   }
 
   @override

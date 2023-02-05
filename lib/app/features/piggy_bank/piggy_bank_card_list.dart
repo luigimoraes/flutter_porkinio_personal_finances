@@ -16,43 +16,48 @@ class PiggyBankCardList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.width * 0.5,
-      child: StreamBuilder<List<PiggyBankModel>>(
-        stream: controller.streamPiggyBankList(),
-        builder: (context, snapshot) {
-          if (snapshot.data != null && snapshot.data!.isEmpty) {
-            return Center(
-              child: Text(
-                'Sem Porkinios cadastrados.',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold, color: Colors.teal[800]),
-                textAlign: TextAlign.center,
-              ),
-            );
-          } else if (snapshot.hasData) {
-            return Padding(
-              padding: const EdgeInsets.symmetric(
-                vertical: 16,
-              ),
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: snapshot.data!
-                    .map(
-                      (model) => PiggyBankCard(
-                        model: model,
-                        controller: controller,
-                      ),
-                    )
-                    .toList(),
-              ),
-            );
-          } else {
-            return Text('Encontramos um erro: "${snapshot.error}"');
-          }
-        },
-      ),
+    return AnimatedBuilder(
+      animation: walletController,
+      builder: (context, snapshot) {
+        return SizedBox(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.width * 0.5,
+          child: StreamBuilder<List<PiggyBankModel>>(
+            stream: controller.streamPiggyBankList(),
+            builder: (context, snapshot) {
+              if (snapshot.data != null && snapshot.data!.isEmpty) {
+                return Center(
+                  child: Text(
+                    'Sem Porkinios cadastrados.',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold, color: Colors.teal[800]),
+                    textAlign: TextAlign.center,
+                  ),
+                );
+              } else if (snapshot.hasData) {
+                return Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 16,
+                  ),
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: snapshot.data!
+                        .map(
+                          (model) => PiggyBankCard(
+                            model: model,
+                            controller: controller,
+                          ),
+                        )
+                        .toList(),
+                  ),
+                );
+              } else {
+                return Text('Encontramos um erro: "${snapshot.error}"');
+              }
+            },
+          ),
+        );
+      }
     );
   }
 }

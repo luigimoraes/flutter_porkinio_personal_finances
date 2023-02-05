@@ -83,7 +83,7 @@ class _AccountRecoveryPageState extends State<AccountRecoveryPage> {
               ),
               SizedBox(height: MediaQuery.of(context).size.height * 0.04),
               CustomFlatButton(
-                  text: 'RECUPERAR',
+                  text: 'CONFIRMAR',
                   color: AppColors.primaryDark,
                   width: 0.9,
                   height: 0.06,

@@ -13,7 +13,7 @@ class CustomLogo extends StatelessWidget {
         Text(
           "Porkin.io",
           style: Theme.of(context).textTheme.headline3?.copyWith(
-                color: Theme.of(context).primaryColorDark,
+                color: Theme.of(context).colorScheme.primary,
               ),
         ),
       ],

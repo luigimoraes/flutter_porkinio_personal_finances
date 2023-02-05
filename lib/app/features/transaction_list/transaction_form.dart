@@ -89,8 +89,8 @@ class _TransactionFormState extends State<TransactionForm> {
                       suffixIcon: Icon(Icons.calendar_today),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
-                        borderSide: BorderSide(
-                            color: AppColors.secondary, width: 2),
+                        borderSide:
+                            BorderSide(color: AppColors.secondary, width: 2),
                       ),
                       errorBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -99,8 +99,8 @@ class _TransactionFormState extends State<TransactionForm> {
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
-                        borderSide: BorderSide(
-                            color: AppColors.primaryDark, width: 2),
+                        borderSide:
+                            BorderSide(color: AppColors.primaryDark, width: 2),
                       ),
                     ),
                     readOnly: true,
@@ -127,8 +127,8 @@ class _TransactionFormState extends State<TransactionForm> {
                       labelText: "Categoria",
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
-                        borderSide: BorderSide(
-                            color: AppColors.secondary, width: 2),
+                        borderSide:
+                            BorderSide(color: AppColors.secondary, width: 2),
                       ),
                       errorBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -137,8 +137,8 @@ class _TransactionFormState extends State<TransactionForm> {
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
-                        borderSide: BorderSide(
-                            color: AppColors.primaryDark, width: 2),
+                        borderSide:
+                            BorderSide(color: AppColors.primaryDark, width: 2),
                       ),
                     ),
                     child: DropdownButton<String>(
@@ -147,7 +147,6 @@ class _TransactionFormState extends State<TransactionForm> {
                       style: const TextStyle(color: Colors.black54),
                       underline: Container(
                         height: 2,
-                        color: Colors.black54,
                       ),
                       onChanged: (String? value) {
                         setState(

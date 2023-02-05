@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:porkinio/app/common/themes/app_colors.dart';
 import 'package:porkinio/app/common/widgets/custom_logo.dart';
 import 'package:porkinio/app/features/home/home_page.dart';
 import 'package:porkinio/app/features/sign_in/sign_in_page.dart';
@@ -61,11 +62,14 @@ class _SplashPageState extends State<SplashPage> {
             children: [
               const CustomLogo(),
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.04,
+                height: MediaQuery.of(context).size.height * 0.01,
               ),
               Text(
                 "Finanças Pessoais",
-                style: Theme.of(context).textTheme.subtitle1,
+                style: Theme.of(context)
+                    .textTheme
+                    .overline
+                    ?.copyWith(color: AppColors.primary, fontSize: 12),
               ),
             ],
           ),
