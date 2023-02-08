@@ -46,7 +46,7 @@ class SignUpController extends ChangeNotifier {
         throw Exception();
       }
 
-      log('usuario criado com sucesso');
+      log('User registered successfully');
       _updateState(
         SignUpSucessState(),
       );

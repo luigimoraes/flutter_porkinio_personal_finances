@@ -47,7 +47,7 @@ class _SignInPageState extends State<SignInPage> {
         }
         if (signInController.state is SignInErrorState) {
           final error = (signInController.state as SignInErrorState).message;
-          customAuthDialog(context, error, 'Logan', SignInPage.route);
+          customAuthDialog(context, error, 'Sign-in', SignInPage.route);
         }
       },
     );
@@ -69,19 +69,19 @@ class _SignInPageState extends State<SignInPage> {
                 child: Column(
                   children: <Widget>[
                     CustomFormField(
-                        labelText: "E-MAIL",
+                        labelText: "E-mail",
                         controller: _emailController,
                         validator: CustomFormFieldValidator.validateEmail),
                     SizedBox(
                         height: (MediaQuery.of(context).size.height) * 0.04),
                     PasswordFormField(
-                      labelText: 'SENHA',
+                      labelText: 'Password',
                       controller: _passwordController,
                       validator: CustomFormFieldValidator.validatePassword,
                     ),
                     SizedBox(height: MediaQuery.of(context).size.height * 0.04),
                     CustomFlatButton(
-                      text: 'ENTRAR',
+                      text: 'SIGN IN',
                       color: AppColors.primaryDark,
                       width: 0.9,
                       height: 0.06,
@@ -100,7 +100,7 @@ class _SignInPageState extends State<SignInPage> {
                     ),
                     SizedBox(height: MediaQuery.of(context).size.height * 0.02),
                     CustomFlatButton(
-                      text: 'ESQUECI MINHA SENHA',
+                      text: 'FORGOT YOUR PASSWORD?',
                       onPressed: () {
                         Navigator.of(context)
                             .pushNamed(AccountRecoveryPage.route);
@@ -113,7 +113,7 @@ class _SignInPageState extends State<SignInPage> {
                     ),
                     SizedBox(height: MediaQuery.of(context).size.height * 0.02),
                     CustomFlatButton(
-                      text: 'CADASTRAR NOVA CONTA',
+                      text: 'CREATE A NEW ACCOUNT',
                       color: Colors.grey,
                       width: 0.9,
                       height: 0.06,

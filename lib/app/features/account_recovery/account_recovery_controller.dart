@@ -18,13 +18,13 @@ class AccountRecoveryController extends ChangeNotifier {
     try {
       await _firebaseAuthService.forgotPassword(email);
       infoMessage =
-          'O Reset da senha foi enviado para o seu e-mail. Clique em Login para entrar com a nova senha.';
+          'A password recovery prompt was sent to your e-mail. Follow te procedure and return to the Sign-in screen to try again.';
       _updateState(
         AccountRecoverySuccessState(),
       );
     } catch (e) {
       _updateState(
-        AccountRecoveryErrorState("Erro, tente novamente"),
+        AccountRecoveryErrorState("Something went wrong, please, check your data and try again in a few moments."),
       );
     }
   }

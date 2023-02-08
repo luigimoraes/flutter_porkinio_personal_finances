@@ -28,7 +28,7 @@ class PiggyBankCardList extends StatelessWidget {
               if (snapshot.data != null && snapshot.data!.isEmpty) {
                 return Center(
                   child: Text(
-                    'Sem Porkinios cadastrados.',
+                    'No Piggy Banks registered yet.',
                     style: TextStyle(
                         fontWeight: FontWeight.bold, color: Colors.teal[800]),
                     textAlign: TextAlign.center,
@@ -52,7 +52,7 @@ class PiggyBankCardList extends StatelessWidget {
                   ),
                 );
               } else {
-                return Text('Encontramos um erro: "${snapshot.error}"');
+                return Text('Something went wrong: "${snapshot.error}"');
               }
             },
           ),

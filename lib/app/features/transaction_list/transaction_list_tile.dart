@@ -69,7 +69,7 @@ class TransactionListTile extends StatelessWidget {
                               width: 4,
                             ),
                             Text(
-                              'R\$ ${model.amount.toStringAsFixed(2)}',
+                              '\$ ${model.amount.toStringAsFixed(2)}',
                               style: Theme.of(context)
                                   .textTheme
                                   .subtitle2
@@ -100,7 +100,7 @@ class TransactionListTile extends StatelessWidget {
                               width: 4,
                             ),
                             Text(
-                              'R\$ ${model.amount.toStringAsFixed(2)}',
+                              '\$ ${model.amount.toStringAsFixed(2)}',
                               style: Theme.of(context)
                                   .textTheme
                                   .subtitle2
@@ -130,7 +130,7 @@ class TransactionListTile extends StatelessWidget {
                     children: [
                       model.category
                           ? Text(
-                              'Recebimento',
+                              'Income',
                               style: Theme.of(context)
                                   .textTheme
                                   .overline
@@ -140,7 +140,7 @@ class TransactionListTile extends StatelessWidget {
                                   ),
                             )
                           : Text(
-                              'Pagamento',
+                              'Expenses',
                               style: Theme.of(context)
                                   .textTheme
                                   .overline
@@ -150,8 +150,7 @@ class TransactionListTile extends StatelessWidget {
                                   ),
                             ),
                       Text(
-                        DateFormat("d 'de' MMMM 'de' y", "pt_BR")
-                            .format(model.date),
+                        DateFormat("yMMMd").format(model.date),
                         style: Theme.of(context).textTheme.overline?.copyWith(
                               fontSize: 8,
                               color: Colors.grey,

@@ -43,13 +43,13 @@ class _SignUpPageState extends State<SignUpPage> {
         if (_controller.state is SignUpSucessState) {
           customAuthDialog(
               context,
-              'Usuário cadastrado com sucesso! Clique abaixo para logar',
-              'Login',
+              'User registered successfully! Click below to Sign-in to your account',
+              'Sign-in',
               SignInPage.route);
         }
         if (_controller.state is SignUpErrorState) {
           final error = (_controller.state as SignUpErrorState).message;
-          customAuthDialog(context, error, 'Login', SignUpPage.route);
+          customAuthDialog(context, error, 'Sign-in', SignUpPage.route);
         }
       },
     );
@@ -78,7 +78,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       children: <Widget>[
                         Center(
                           child: Text(
-                            'Criar uma nova conta',
+                            'Create a new account',
                             style: Theme.of(context)
                                 .textTheme
                                 .headline5
@@ -91,7 +91,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         ),
                         CustomFormField(
                           validator: CustomFormFieldValidator.validateName,
-                          labelText: 'Nome completo',
+                          labelText: 'Full Name',
                           controller: _nameController,
                         ),
                         SizedBox(
@@ -106,7 +106,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           height: MediaQuery.of(context).size.height * 0.02,
                         ),
                         PasswordFormField(
-                          labelText: 'Senha',
+                          labelText: 'Password',
                           validator: CustomFormFieldValidator.validatePassword,
                           controller: _passwordController,
                         ),
@@ -114,7 +114,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           height: MediaQuery.of(context).size.height * 0.02,
                         ),
                         PasswordFormField(
-                          labelText: 'Confirme sua senha',
+                          labelText: 'Password Confirmation',
                           validator: (value) =>
                               CustomFormFieldValidator.confirmValidatePassword(
                                   _passwordController.text, value),
@@ -124,7 +124,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         ),
                         Center(
                           child: Text(
-                            'Ao criar uma conta você confirma que concorda com \nos nossos Termos de Serviço e Política de Privacidade.',
+                            'By creating an account, you confirm to agree \nwith our Terms of Services and Privacy Policy.',
                             style: Theme.of(context).textTheme.caption,
                           ),
                         ),
@@ -137,7 +137,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 height: MediaQuery.of(context).size.height * 0.04,
               ),
               CustomFlatButton(
-                text: 'CADASTRAR',
+                text: 'CONFIRM',
                 color: AppColors.primaryDark,
                 width: 0.9,
                 height: 0.06,
@@ -154,7 +154,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       password: _passwordController.text,
                     );
                   } else {
-                    log('ERROR ao logar');
+                    log('Something went wrong. Please check your data and try again in a few moments.');
                   }
                 },
               ),
@@ -165,7 +165,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 },
                 child: const Center(
                   child: Text(
-                    'Voltar para tela de login',
+                    'Return to the sign-in page',
                     style: TextStyle(fontSize: 16),
                   ),
                 ),

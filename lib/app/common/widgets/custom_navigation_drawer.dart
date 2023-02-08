@@ -63,7 +63,7 @@ class CustomNavigationDrawer extends StatelessWidget {
                     child: Divider(),
                   ),
                   Text(
-                    "  Navegação de páginas  ",
+                    "  Page Navigation  ",
                     style: Theme.of(context).textTheme.overline?.copyWith(
                           color: Colors.grey,
                           fontSize: 8,
@@ -103,7 +103,7 @@ class CustomNavigationDrawer extends StatelessWidget {
                 color: AppColors.primary,
               ),
               title: Text(
-                'Página de Login',
+                'Sign-in page',
                 style: Theme.of(context)
                     .textTheme
                     .overline
@@ -122,7 +122,7 @@ class CustomNavigationDrawer extends StatelessWidget {
                 color: AppColors.primary,
               ),
               title: Text(
-                'Página de Cadastro',
+                'Sign-up page',
                 style: Theme.of(context)
                     .textTheme
                     .overline
@@ -141,7 +141,7 @@ class CustomNavigationDrawer extends StatelessWidget {
                 color: AppColors.primary,
               ),
               title: Text(
-                'Recuperação de Conta',
+                'Account recovery',
                 style: Theme.of(context)
                     .textTheme
                     .overline
@@ -167,7 +167,7 @@ class CustomNavigationDrawer extends StatelessWidget {
                         child: Divider(),
                       ),
                       Text(
-                        "  Sobre o aplicativo  ",
+                        "  About the App  ",
                         style: Theme.of(context).textTheme.overline?.copyWith(
                               color: Colors.grey,
                               fontSize: 8,
@@ -194,7 +194,7 @@ class CustomNavigationDrawer extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  'Esse aplicativo foi desenvolvido em grupo como parte da formação do curso de Desenvolvimento Mobile em Flutter da PROZ Educação (Grupo 03, Turma 01 de 2022).',
+                  'This app was developed as part of the Flutter Mobile Development course by PROZ (Group 03, Class 01 of 2022).',
                   style: Theme.of(context)
                       .textTheme
                       .overline

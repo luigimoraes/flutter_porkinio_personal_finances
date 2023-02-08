@@ -41,7 +41,7 @@ class VirtualWalletController extends ChangeNotifier {
     final queryIncome = _firestore
         .collection('wallet')
         .doc('${locator.get<AuthService>().currentUser!.uid}/income');
-    final snapshotIncome = await queryIncome.get();
+    final snapshotIncome =    await queryIncome.get();
 
     if (snapshotIncome.exists) {
       wallet.income = snapshotIncome.data()?.entries.first.value;
@@ -92,22 +92,4 @@ class VirtualWalletController extends ChangeNotifier {
 
     return walletBalance;
   }
-
-  // Future updateWallet(VirtualWalletModel wallet) async {
-  //   final newBalance = await getBalance();
-  //   final newIncome = await getIncome();
-  //   final newExpenses = await getExpenses();
-  //   final newWallet = _firestore
-  //       .collection('wallet')
-  //       .doc(locator.get<AuthService>().currentUser!.uid);
-  //   wallet.id = newWallet.id;
-  //   wallet.balance = newBalance;
-  //   wallet.income = newIncome;
-  //   wallet.expenses = newExpenses;
-  //   wallet.userId = locator.get<AuthService>().currentUser!.uid;
-  //   await newWallet.set(wallet.toJson());
-  //   _updateState(
-  //     VirtualWalletCardSuccessState(),
-  //   );
-  // }
 }

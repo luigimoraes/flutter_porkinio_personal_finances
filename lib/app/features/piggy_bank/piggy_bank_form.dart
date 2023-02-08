@@ -52,7 +52,7 @@ class _PiggyBankFormState extends State<PiggyBankForm> {
             Icons.arrow_back,
           ),
         ),
-        title: const Text('Formulário do Porkinio'),
+        title: const Text('Piggy Bank Form'),
         elevation: 0,
       ),
       body: Form(
@@ -67,18 +67,18 @@ class _PiggyBankFormState extends State<PiggyBankForm> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   CustomFormField(
-                    labelText: 'Titulo',
+                    labelText: 'Title',
                     validator: CustomFormFieldValidator.validateNull,
                     controller: _titleController,
                   ),
                   CustomFormField(
-                    labelText: 'Valor',
+                    labelText: 'Value',
                     validator: CustomFormFieldValidator.validateNull,
                     controller: _amountController,
                     keyboardType: TextInputType.number,
                   ),
                   CustomFormField(
-                    labelText: 'URL da Imagem',
+                    labelText: 'Image URL',
                     validator: CustomFormFieldValidator.validateNull,
                     controller: _networkImageController,
                   ),
@@ -86,7 +86,7 @@ class _PiggyBankFormState extends State<PiggyBankForm> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       CustomFlatButton(
-                        text: 'VOLTAR',
+                        text: 'CANCEL',
                         color: Colors.grey,
                         width: 0.3,
                         height: 0.06,
@@ -97,7 +97,7 @@ class _PiggyBankFormState extends State<PiggyBankForm> {
                         },
                       ),
                       CustomFlatButton(
-                        text: 'CONFIRMAR',
+                        text: 'CONFIRM',
                         color: AppColors.primaryDark,
                         width: 0.6,
                         height: 0.06,

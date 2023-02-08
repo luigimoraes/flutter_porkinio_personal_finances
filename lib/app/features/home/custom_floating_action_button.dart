@@ -23,7 +23,7 @@ class CustomFloatingActionButton extends StatelessWidget {
       children: [
         SpeedDialChild(
           child: const Icon(Icons.receipt_long, color: Colors.white),
-          label: 'Cadastrar nova transação',
+          label: 'Create a new transaction',
           labelStyle: Theme.of(context).textTheme.button,
           backgroundColor: AppColors.primary,
           onTap: () {
@@ -39,7 +39,7 @@ class CustomFloatingActionButton extends StatelessWidget {
         ),
         SpeedDialChild(
           child: const Icon(Icons.savings_sharp, color: Colors.white),
-          label: 'Cadastrar novo Porkinio',
+          label: 'Create a new Piggy Bank',
           labelStyle: Theme.of(context).textTheme.button,
           backgroundColor: AppColors.primary,
           onTap: () {

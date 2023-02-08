@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Olá, ${locator.get<AuthService>().currentUser?.displayName}!',
+          'Hello, ${locator.get<AuthService>().currentUser?.displayName}!',
         ),
         elevation: 0,
         actions: <Widget>[
@@ -47,9 +47,9 @@ class _HomePageState extends State<HomePage> {
               showDialog(
                 context: context,
                 builder: (ctx) => AlertDialog(
-                  title: const Text('Deseja sair desta conta?'),
+                  title: const Text('Do you wish to log out of this account?'),
                   content: Text(
-                    'Os seus dados continuarão salvos na núvem e você será direcionado novamente à página de Login.',
+                    'Your app data will be kept in the cloud and you will be redirected back to the sign-in page.',
                     style: Theme.of(context).textTheme.overline?.copyWith(
                           color: Colors.teal[800],
                         ),
@@ -69,10 +69,10 @@ class _HomePageState extends State<HomePage> {
                             onPressed: () {
                               Navigator.of(context).pop();
                             },
-                            child: const Text('Cancelar'),
+                            child: const Text('CANCEL'),
                           ),
                           ElevatedButton(
-                            child: const Text('Confirmar'),
+                            child: const Text('CONFIRM'),
                             onPressed: () async {
                               _secureStorage
                                   .deleteOne(key: "CURRENT_USER")
@@ -120,7 +120,7 @@ class _HomePageState extends State<HomePage> {
                           child: Divider(),
                         ),
                         Text(
-                          "  Minhas Transações  ",
+                          "  My transactions  ",
                           style: Theme.of(context).textTheme.overline?.copyWith(
                                 color: Colors.grey,
                                 fontSize: 8,
@@ -149,7 +149,7 @@ class _HomePageState extends State<HomePage> {
                           child: Divider(),
                         ),
                         Text(
-                          "  Meus Porkinios  ",
+                          "  My Piggy Banks  ",
                           style: Theme.of(context).textTheme.overline?.copyWith(
                                 color: Colors.grey,
                                 fontSize: 8,

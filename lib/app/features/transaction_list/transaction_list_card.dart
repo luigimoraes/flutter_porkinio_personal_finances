@@ -24,7 +24,7 @@ class TransactionListCard extends StatelessWidget {
             if (snapshot.data != null && snapshot.data!.isEmpty) {
               return const Center(
                 child: Text(
-                  'Sem transações cadastradas',
+                  'No Transactions registered yet',
                   style: TextStyle(
                       fontWeight: FontWeight.bold, color: Colors.white),
                 ),
@@ -46,7 +46,7 @@ class TransactionListCard extends StatelessWidget {
                 ),
               );
             } else {
-              return Text('Encontramos um erro: "${snapshot.error}"');
+              return Text('Something went wrong: "${snapshot.error}"');
             }
           },
         ),

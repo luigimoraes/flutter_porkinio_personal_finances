@@ -35,7 +35,7 @@ class SignInController extends ChangeNotifier {
           SignInSuccessState(),
         );
       } else {
-        throw Exception("Usuário não cadastrado");
+        throw Exception("Invalid user. Please check your data and try again");
       }
     } catch (e) {
       _updateState(

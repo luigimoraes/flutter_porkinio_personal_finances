@@ -49,7 +49,7 @@ class _PiggyBankCardOptionsButtonState
           value: ItemOptions.edit,
           child: ListTile(
             title: Text(
-              'Editar',
+              'Edit',
               style: Theme.of(context).textTheme.caption,
             ),
             trailing: const Icon(Icons.edit),
@@ -73,7 +73,7 @@ class _PiggyBankCardOptionsButtonState
           value: ItemOptions.delete,
           child: ListTile(
             title: Text(
-              'Deletar',
+              'Delete',
               style: Theme.of(context).textTheme.caption,
             ),
             trailing: const Icon(Icons.delete),
@@ -81,9 +81,9 @@ class _PiggyBankCardOptionsButtonState
               showDialog(
                 context: context,
                 builder: (ctx) => AlertDialog(
-                  title: const Text('Deseja excluir esse Porkinio?'),
+                  title: const Text('Are you sure you want to delete this Piggy Bank?'),
                   content: Text(
-                    'Essa ação não poderá ser desfeita.',
+                    'This action can not be undone.',
                     style: Theme.of(context).textTheme.overline?.copyWith(
                           color: Colors.redAccent,
                         ),
@@ -103,10 +103,10 @@ class _PiggyBankCardOptionsButtonState
                             onPressed: () {
                               Navigator.of(context).pop();
                             },
-                            child: const Text('Cancelar'),
+                            child: const Text('Cancel'),
                           ),
                           ElevatedButton(
-                            child: const Text('Confirmar'),
+                            child: const Text('Confirm'),
                             onPressed: () async {
                               Navigator.of(context)
                                   .pushReplacementNamed(HomePage.route);

@@ -6,7 +6,4 @@ class VirtualWalletCardLoadingState extends VirtualWalletCardState {}
 
 class VirtualWalletCardSuccessState extends VirtualWalletCardState {}
 
-class VirtualWalletCardErrorState extends VirtualWalletCardState {
-  final String message;
-  VirtualWalletCardErrorState(this.message);
-}
+class VirtualWalletCardErrorState extends VirtualWalletCardState {}

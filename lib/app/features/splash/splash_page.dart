@@ -65,7 +65,7 @@ class _SplashPageState extends State<SplashPage> {
                 height: MediaQuery.of(context).size.height * 0.01,
               ),
               Text(
-                "Finanças Pessoais",
+                "Personal Finances",
                 style: Theme.of(context)
                     .textTheme
                     .overline

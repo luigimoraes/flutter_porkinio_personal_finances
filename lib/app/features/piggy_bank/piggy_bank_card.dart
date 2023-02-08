@@ -48,7 +48,7 @@ class _PiggyBankCardState extends State<PiggyBankCard> {
                         FittedBox(
                           // VALOR
                           child: Text(
-                            'R\$ ${widget.model.amount.toStringAsFixed(2)}',
+                            '\$ ${widget.model.amount.toStringAsFixed(2)}',
                             style:
                                 Theme.of(context).textTheme.headline6?.copyWith(
                                       color: Colors.white,

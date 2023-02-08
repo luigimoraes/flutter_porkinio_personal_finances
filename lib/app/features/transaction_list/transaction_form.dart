@@ -23,7 +23,7 @@ class TransactionForm extends StatefulWidget {
   State<TransactionForm> createState() => _TransactionFormState();
 }
 
-const List<String> list = <String>['Recebimento', 'Pagamento'];
+const List<String> list = <String>['Income', 'Expenses'];
 
 class _TransactionFormState extends State<TransactionForm> {
   final GlobalKey<FormState> _formKey = GlobalKey();
@@ -56,7 +56,7 @@ class _TransactionFormState extends State<TransactionForm> {
             Icons.arrow_back,
           ),
         ),
-        title: const Text('Formulário de Transação'),
+        title: const Text('Transaction Form'),
         elevation: 0,
       ),
       body: Form(
@@ -71,12 +71,12 @@ class _TransactionFormState extends State<TransactionForm> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   CustomFormField(
-                    labelText: 'Titulo',
+                    labelText: 'Title',
                     validator: CustomFormFieldValidator.validateNull,
                     controller: _titleController,
                   ),
                   CustomFormField(
-                    labelText: 'Valor',
+                    labelText: 'Value',
                     validator: CustomFormFieldValidator.validateNull,
                     controller: _amountController,
                     keyboardType: TextInputType.number,
@@ -85,7 +85,7 @@ class _TransactionFormState extends State<TransactionForm> {
                     controller: _dateController,
                     validator: CustomFormFieldValidator.validateNull,
                     decoration: const InputDecoration(
-                      labelText: "Data",
+                      labelText: "Date",
                       suffixIcon: Icon(Icons.calendar_today),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -113,7 +113,7 @@ class _TransactionFormState extends State<TransactionForm> {
                       );
                       if (pickedDate != null) {
                         String formattedDate =
-                            DateFormat('yyyy-MM-dd').format(pickedDate);
+                            DateFormat("yyyy-MM-dd").format(pickedDate);
                         setState(
                           () {
                             _dateController.text = formattedDate;
@@ -124,7 +124,7 @@ class _TransactionFormState extends State<TransactionForm> {
                   ),
                   InputDecorator(
                     decoration: const InputDecoration(
-                      labelText: "Categoria",
+                      labelText: "Category",
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                         borderSide:
@@ -174,7 +174,7 @@ class _TransactionFormState extends State<TransactionForm> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       CustomFlatButton(
-                        text: 'VOLTAR',
+                        text: 'CANCEL',
                         color: Colors.grey,
                         width: 0.3,
                         height: 0.06,
@@ -185,7 +185,7 @@ class _TransactionFormState extends State<TransactionForm> {
                         },
                       ),
                       CustomFlatButton(
-                        text: 'CONFIRMAR',
+                        text: 'CONFIRM',
                         color: AppColors.primaryDark,
                         width: 0.6,
                         height: 0.06,
@@ -200,7 +200,7 @@ class _TransactionFormState extends State<TransactionForm> {
                               amount: double.parse(_amountController.text),
                               date: DateTime.parse(_dateController.text),
                               category:
-                                  dropdownValue == 'Recebimento' ? true : false,
+                                  dropdownValue == 'Income' ? true : false,
                             );
                             if (widget.model != null) {
                               widget.controller

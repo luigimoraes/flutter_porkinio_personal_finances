@@ -37,7 +37,7 @@ Future<void> customShowModalBottomSheet(
                   horizontal: 32.0,
                 ),
                 child: ElevatedButton(
-                  child: const Text('Tentar novamente'),
+                  child: const Text('Try again'),
                   onPressed: () =>
                       Navigator.of(context).pushReplacementNamed(route),
                 ),

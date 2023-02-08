@@ -29,13 +29,14 @@ class _AccountRecoveryPageState extends State<AccountRecoveryPage> {
     accountController.addListener(
       () {
         if (accountController.state is AccountRecoverySuccessState) {
-          customAuthDialog(context, accountController.infoMessage, 'Login',
+          customAuthDialog(context, accountController.infoMessage, 'Sign-in',
               SignInPage.route);
         }
         if (accountController.state is AccountRecoveryErrorState) {
           final error =
               (accountController.state as AccountRecoveryErrorState).message;
-          customAuthDialog(context, error, 'Tentar', AccountRecoveryPage.route);
+          customAuthDialog(
+              context, error, 'Try to sign in', AccountRecoveryPage.route);
         }
       },
     );
@@ -61,7 +62,7 @@ class _AccountRecoveryPageState extends State<AccountRecoveryPage> {
                     children: [
                       Center(
                         child: Text(
-                          'Recuperar sua senha',
+                          'Forgot your password?',
                           style: Theme.of(context)
                               .textTheme
                               .headline5
@@ -83,7 +84,7 @@ class _AccountRecoveryPageState extends State<AccountRecoveryPage> {
               ),
               SizedBox(height: MediaQuery.of(context).size.height * 0.04),
               CustomFlatButton(
-                  text: 'CONFIRMAR',
+                  text: 'CONFIRM',
                   color: AppColors.primaryDark,
                   width: 0.9,
                   height: 0.06,
@@ -102,7 +103,7 @@ class _AccountRecoveryPageState extends State<AccountRecoveryPage> {
                 },
                 child: const Center(
                   child: Text(
-                    'Voltar para tela de login',
+                    'Go back to the Sign-in page',
                     style: TextStyle(fontSize: 16),
                   ),
                 ),

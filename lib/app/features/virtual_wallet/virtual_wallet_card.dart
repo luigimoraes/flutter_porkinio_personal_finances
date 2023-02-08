@@ -58,7 +58,7 @@ class _VirtualWalletCardState extends State<VirtualWalletCard> {
                           Column(
                             children: [
                               Text(
-                                'Carteira Virtual:',
+                                'Virtual Wallet:',
                                 style: Theme.of(context)
                                     .textTheme
                                     .overline
@@ -73,7 +73,7 @@ class _VirtualWalletCardState extends State<VirtualWalletCard> {
                               future: virtualWalletController.getBalance(model),
                               builder: (context, snapshot) {
                                 return Text(
-                                  'R\$ ${model.balance?.toStringAsFixed(2)}',
+                                  '\$ ${model.balance?.toStringAsFixed(2)}',
                                   style: Theme.of(context)
                                       .textTheme
                                       .headline3
@@ -84,7 +84,7 @@ class _VirtualWalletCardState extends State<VirtualWalletCard> {
                               },
                             )
                           : Text(
-                              'R\$ • • • •',
+                              '\$ • • • •',
                               style: Theme.of(context)
                                   .textTheme
                                   .headline3
@@ -118,7 +118,7 @@ class _VirtualWalletCardState extends State<VirtualWalletCard> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Recebimentos:',
+                                    'Income:',
                                     style: Theme.of(context)
                                         .textTheme
                                         .overline
@@ -131,7 +131,7 @@ class _VirtualWalletCardState extends State<VirtualWalletCard> {
                                                 .getIncome(model),
                                             builder: (context, snapshot) {
                                               return Text(
-                                                'R\$ ${model.income?.toStringAsFixed(2)}',
+                                                '\$ ${model.income?.toStringAsFixed(2)}',
                                                 style: Theme.of(context)
                                                     .textTheme
                                                     .bodyText1
@@ -142,7 +142,7 @@ class _VirtualWalletCardState extends State<VirtualWalletCard> {
                                             },
                                           )
                                         : Text(
-                                            'R\$ • • • •',
+                                            '\$ • • • •',
                                             style: Theme.of(context)
                                                 .textTheme
                                                 .bodyText1
@@ -178,7 +178,7 @@ class _VirtualWalletCardState extends State<VirtualWalletCard> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Pagamentos:',
+                                    'Expenses:',
                                     style: Theme.of(context)
                                         .textTheme
                                         .overline
@@ -191,7 +191,7 @@ class _VirtualWalletCardState extends State<VirtualWalletCard> {
                                                 .getExpenses(model),
                                             builder: (context, snapshot) {
                                               return Text(
-                                                'R\$ ${model.expenses?.toStringAsFixed(2)}',
+                                                '\$ ${model.expenses?.toStringAsFixed(2)}',
                                                 style: Theme.of(context)
                                                     .textTheme
                                                     .bodyText1
@@ -202,7 +202,7 @@ class _VirtualWalletCardState extends State<VirtualWalletCard> {
                                             },
                                           )
                                         : Text(
-                                            'R\$ • • • •',
+                                            '\$ • • • •',
                                             style: Theme.of(context)
                                                 .textTheme
                                                 .bodyText1
@@ -217,11 +217,6 @@ class _VirtualWalletCardState extends State<VirtualWalletCard> {
                           ),
                         ],
                       ),
-                      // FutureBuilder(
-                      //     future: virtualWalletController.updateWallet(model),
-                      //     builder: (context, snapshot) {
-                      //       return SizedBox();
-                      //     }),
                     ],
                   ),
                 ],

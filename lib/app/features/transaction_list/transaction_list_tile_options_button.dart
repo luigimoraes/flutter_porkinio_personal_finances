@@ -54,7 +54,7 @@ class _TransactionListTileOptionsButtonState
           value: ItemOptions.edit,
           child: ListTile(
             title: Text(
-              'Editar',
+              'Edit',
               style: Theme.of(context).textTheme.caption,
             ),
             trailing: const Icon(Icons.edit),
@@ -78,7 +78,7 @@ class _TransactionListTileOptionsButtonState
           value: ItemOptions.delete,
           child: ListTile(
             title: Text(
-              'Deletar',
+              'Delete',
               style: Theme.of(context).textTheme.caption,
             ),
             trailing: const Icon(Icons.delete),
@@ -86,9 +86,10 @@ class _TransactionListTileOptionsButtonState
               showDialog(
                 context: context,
                 builder: (ctx) => AlertDialog(
-                  title: const Text('Deseja excluir essa transação?'),
+                  title: const Text(
+                      'Are you sure you want to delete this transaction?'),
                   content: Text(
-                    'Essa ação não poderá ser desfeita.',
+                    'This action can not be undone.',
                     style: Theme.of(context).textTheme.overline?.copyWith(
                           color: Colors.redAccent,
                         ),
@@ -108,10 +109,10 @@ class _TransactionListTileOptionsButtonState
                             onPressed: () {
                               Navigator.of(context).pop();
                             },
-                            child: const Text('Cancelar'),
+                            child: const Text('CANCEL'),
                           ),
                           ElevatedButton(
-                            child: const Text('Confirmar'),
+                            child: const Text('CONFIRM'),
                             onPressed: () async {
                               Navigator.of(context)
                                   .pushReplacementNamed(HomePage.route);
